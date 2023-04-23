@@ -110,10 +110,13 @@ class Solution {
         List<List<Integer>> res = new ArrayList<>();
         for(var e:mp.entrySet())
         {
+            //abhi hum column ke basis pr list bna rhe hai
+            //that is mapping column number to its List
             Cord c = (Cord)e.getKey();
             resm.computeIfAbsent(c.col,a -> new ArrayList<>()).addAll(e.getValue());
         }
-
+        
+        //jo upar column number aur list ki mapping bnai, bs uski List saari line se return krdo
         for(var i:resm.values())
         res.add(new ArrayList<>(i));
 
